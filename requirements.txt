@@ -1,0 +1,8 @@
+lxml==4.9.2
+numpy==1.24.2
+opencv-python==4.7.0.72
+Pillow==9.4.0
+python-pptx==0.6.21
+pytube==12.1.2
+tqdm==4.65.0
+XlsxWriter==3.0.9
