@@ -19,7 +19,7 @@ This script creates a PowerPoint presentation from a YouTube video by extracting
 ## Usage
 
 ```sh
-python youtube_ppt.py <url> [--crop x y width height] [--start MM:SS] [--end MM:SS] [--output output_path]
+python youtube_ppt.py <url> [--crop x,y,width,height] [--start MM:SS] [--end MM:SS] [--output output_path]
 ```
 
 * `<url>`: YouTube video URL (required).
@@ -31,7 +31,7 @@ python youtube_ppt.py <url> [--crop x y width height] [--start MM:SS] [--end MM:
 ## Example
 
 ```sh
-python youtube_ppt.py "https://www.youtube.com/watch?v=RshscGDLQD8" --crop 200 0 1500 1000 --start 00:36 --end 16:01
+python youtube_ppt.py "https://www.youtube.com/watch?v=RshscGDLQD8" --crop 200,0,1500,1000 --start 00:36 --end 16:01
 ```
 
 This command will download the YouTube video at the specified URL, crop the speaker using the provided rectangle, create a PowerPoint presentation starting at 00:36 and ending at 16:01, and save the resulting PowerPoint file in the current working directory with the video ID as the filename.
