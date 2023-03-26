@@ -164,7 +164,7 @@ def main():
     print(f"Processing video: {video_filename}")
 
     if args.no_cache:
-        delete_folder(video_filename)
+        delete_folder(f"videos/{video_id}")
         delete_folder(image_folder)
 
     if not os.path.exists(video_filename):
