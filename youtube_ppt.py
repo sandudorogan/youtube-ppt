@@ -8,7 +8,13 @@ import argparse
 import cv2
 import numpy as np
 import os
+import shutil
 import re
+
+
+def delete_folder(folder_path):
+    if os.path.exists(folder_path):
+        shutil.rmtree(folder_path)
 
 
 def parse_arguments():
@@ -18,6 +24,7 @@ def parse_arguments():
     parser.add_argument("--start", help="Start time in format MM:SS", default="00:00")
     parser.add_argument("--end", help="End time in format MM:SS", default=None)
     parser.add_argument("--output", help="Output PowerPoint file path", default=None)
+    parser.add_argument('--no-cache', action='store_true', help="Disable caching and force redownload of video and regeneration of images.")
     return parser.parse_args()
 
 
@@ -155,7 +162,10 @@ def main():
     pptx_filename = args.output if args.output else f"{video_id}.pptx"
 
     print(f"Processing video: {video_filename}")
-    print(f"Using folder: {image_folder}")
+
+    if args.no_cache:
+        delete_folder(video_filename)
+        delete_folder(image_folder)
 
     if not os.path.exists(video_filename):
         video_filename = download_video(args.url)

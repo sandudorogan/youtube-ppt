@@ -27,6 +27,7 @@ python youtube_ppt.py <url> [--crop x,y,width,height] [--start MM:SS] [--end MM:
 * `--start`: Start time of the presentation in format MM:SS (optional, default is "00:00").
 * `--end`: End time of the presentation in format MM:SS (optional, default is the end of the video).
 * `--output`: Output PowerPoint file path (optional, default is the current working directory with the video ID as the filename).
+- `--no-cache`: Do not use cached images and force redownload of the video and regeneration of images.
 
 ## Example
 
